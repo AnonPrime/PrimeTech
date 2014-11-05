@@ -1,8 +1,8 @@
-robot = requires("robot")
+robot = require("robot")
 
 local args = {...}
 
-if args[1] == nil or args[2] == nil or args[3] == nil or robot.getItemCount(1) < 1 or args[1] == "help" then
+if args[1] == nil or args[2] == nil or args[3] == nil or robot.count(1) < 1 or args[1] == "help" then
   print ("Usage: beams [length][# of beams][space]")
   print ("Place the robot in a corner with a wall to its left.")
   print ("Put one of the building blocks in the robot's")
@@ -75,9 +75,9 @@ function findBlock()
   local found = false
   for i = 2, 16, 1 do
     robot.select(i)
-    if robot.getItemCount(i) > 0 and robot.compareTo(1) then
+    if robot.count(i) > 0 and robot.compareTo(1) then
       found = true
-      stack = robot.getItemCount(i)
+      stack = robot.count(i)
       break
     end
   end
