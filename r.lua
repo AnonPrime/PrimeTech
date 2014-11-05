@@ -1,11 +1,11 @@
 ----------------------------------------
--- File Name: l                       --
+-- File Name: r                       --
 -- Version    1.0                     --
 -- Date:      2014/02/06              --
 -- Author:    MiradoPrime             --
 ----------------------------------------
 -- Description: This program will     --
---  make the robot turn left 90      --
+--  make the robot turn right 90      --
 --  degrees a number of times.        --
 ----------------------------------------
 
@@ -15,13 +15,13 @@ local tArgs = {...}
 local times = 0
 
 if tArgs[1] == nil then
-  robot.turnLeft()
+  robot.turnRight()
   return
 end
 
 if tArgs[1] == "help" then
   print("Usage: r [times]")
-  print("This program will make robot turn left.")
+  print("This program will make robot turn right.")
   print("Will turn once with no arguments or number of [times].")
   return
 end
@@ -34,7 +34,7 @@ elseif times == 0 then
   print("I didn't move, just like you asked boss.")
 else
   for i = 1, times, 1 do
-    robot.turnLeft()
+    robot.turnRight()
       if i == 4 then
       print("Wheeeeee!")
     elseif i == 10 then
@@ -49,5 +49,5 @@ else
       print("Please, enough! I'm getting sick now boss.")
     end
   end
-  print("I turned left ",times," times just like you asked boss.")
+  print("I turned right ",times," times just like you asked boss.")
 end
