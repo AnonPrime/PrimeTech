@@ -127,17 +127,31 @@ function forward()
   end
 end
 
-for i = 1, length, 1 do
+for i = 1, width, 1 do
   if not stuck then
-    while robot.down() dp
-      depth = depth + 1
+    for i = 1, length, 1 do
+      if not stuck then
+        while robot.down() do
+          depth = depth + 1
+        end
+        for j = depth-1, 0, -1 do
+          up()
+          placeDown()
+        end
+        depth = 0
+        if i ~= length then
+          forward()
+        end
+      end
     end
-    for j = depth, 0, -1 do
-      up()
-      placeDown()
-    end
-    if i ~= length then
+    if i % 2 == 1 then
+      robot.turnRight()
       forward()
+      turtle.turnRight()
+    else
+      robot.turnLeft()
+      forward()
+      turtle.turnLeft()
     end
   end
 end
