@@ -163,7 +163,7 @@ function place(slot)
     print("place()")
   end
   if not robot.compareTo(slot) then
-    findblock(slot)
+    findBlock(slot)
   end
   if stack < 1 then
       print ("Waiting for stack.")
