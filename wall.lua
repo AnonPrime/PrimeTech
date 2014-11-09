@@ -70,61 +70,62 @@ function pillar(p)
   if height == 0 then
     while robot.up() do
 	  if p % (space + 1) == 0 then
-		placeDown(1)
-	  else
-		if (total + 1) % ( beamHeight +  1) == 0 then
-			placeDown(1)
-		else
-			placeDown(2)
-		end
-	  end
+        placeDown(1)
+      else
+      if (total + 1) % ( beamHeight +  1) == 0 then
+        placeDown(1)
+      else
+        placeDown(2)
+      end
       total = total + 1
     end
     back()
     if not stuck then 
-      	  if p % (space + 1) == 0 then
-		place(1)
-	  else
-		if (total + 1) % ( beamHeight +  1) == 0 then
-			place(1)
-		else
-			place(2)
-		end
-	  end
+      if p % (space + 1) == 0 then
+        place(1)
+      else
+        if (total + 1) % ( beamHeight +  1) == 0 then
+          place(1)
+        else
+          place(2)
+        end
+      end
       total = total + 1
     else
       return total
     end
-    for i = 1, total, 1 do
+	for i = 1, total, 1 do
       robot.down()
     end
+
   else
     for i = 1, height - 1, 1 do
       up()
       if not stuck then 
-	  if p % (space + 1) == 0 then
-		placeDown(1)
+	    if p % (space + 1) == 0 then
+		  placeDown(1)
+	    else
+		  if (total + 1) % ( beamHeight +  1) == 0 then
+			  placeDown(1)
+		  else
+			  placeDown(2)
+		  end
+	    end
 	  else
-		if (total + 1) % ( beamHeight +  1) == 0 then
-			placeDown(1)
-		else
-			placeDown(2)
-		end
-	  end
-      else
         break
       end
     end
     back()
     if not stuck then
-      	  if p % (space + 1) == 0 then
-		place(1)
+      if p % (space + 1) == 0 then
+        place(1)
 	  else
-		if (total + 1) % ( beamHeight +  1) == 0 then
-			place(1)
+        if (total + 1) % ( beamHeight +  1) == 0 then
+          place(1)
 		else
-			place(2)
+          place(2)
 		end
+	  end	
     else
       return total
     end
@@ -134,7 +135,6 @@ function pillar(p)
         break
       end
     end
-	end
   return total
 end
 
