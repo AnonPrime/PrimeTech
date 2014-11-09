@@ -72,7 +72,7 @@ function pillar(p)
       if p % (space + 1) == 0 then
         placeDown(1)
       else
-        if (total + 1) % ( beamHeight +  1) == 0 then
+        if (total) % ( beamHeight +  1) == beamHeight then
           placeDown(1)
         else
           placeDown(2)
