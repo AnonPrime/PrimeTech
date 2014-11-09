@@ -42,8 +42,8 @@ if length == nil then
 end
 
 if tArgs[2] ~= nil then
-  height = tonumber(tArgs[2])
-  if height == nil then
+  width = tonumber(tArgs[2])
+  if width == nil then
     helpText()
     return
   end
@@ -147,11 +147,11 @@ for i = 1, width, 1 do
     if i % 2 == 1 then
       robot.turnRight()
       forward()
-      turtle.turnRight()
+      robot.turnRight()
     else
       robot.turnLeft()
       forward()
-      turtle.turnLeft()
+      robot.turnLeft()
     end
   end
 end
