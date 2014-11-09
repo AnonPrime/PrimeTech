@@ -85,7 +85,7 @@ function pillar(p)
       if p % (space + 1) == 0 then
         place(1)
       else
-        if (total + 1) % ( beamHeight +  1) == 0 then
+        if (total) % ( beamHeight +  1) == 0 then
           place(1)
         else
           place(2)
@@ -105,12 +105,13 @@ function pillar(p)
         if p % (space + 1) == 0 then
           placeDown(1)
         else
-          if (total + 1) % ( beamHeight +  1) == 0 then
+          if (total) % ( beamHeight +  1) == 0 then
             placeDown(1)
           else
             placeDown(2)
           end
         end
+        total = total + 1
       else
         break
       end
@@ -120,12 +121,13 @@ function pillar(p)
       if p % (space + 1) == 0 then
         place(1)
       else
-        if (total + 1) % ( beamHeight +  1) == 0 then
+        if (total) % ( beamHeight +  1) == 0 then
           place(1)
          else
           place(2)
         end
-      end	
+      end
+      total = total + 1
     else
       return total
     end
