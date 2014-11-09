@@ -226,7 +226,7 @@ function forward()
   end
 end
 
-for i = 0, (1 + (pillars * (space + 1)), 1 do
+for i = 0, (1 + (pillars * (space + 1))), 1 do
 	pillar(i)
 	if stuck then 
 		return
