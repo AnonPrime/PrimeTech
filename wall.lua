@@ -135,6 +135,7 @@ function pillar(p)
         break
       end
     end
+  end
   return total
 end
 
