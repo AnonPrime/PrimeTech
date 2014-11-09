@@ -69,13 +69,14 @@ function pillar(p)
   local total = height
   if height == 0 then
     while robot.up() do
-	  if p % (space + 1) == 0 then
+      if p % (space + 1) == 0 then
         placeDown(1)
       else
-      if (total + 1) % ( beamHeight +  1) == 0 then
-        placeDown(1)
-      else
-        placeDown(2)
+        if (total + 1) % ( beamHeight +  1) == 0 then
+          placeDown(1)
+        else
+          placeDown(2)
+        end
       end
       total = total + 1
     end
@@ -94,24 +95,23 @@ function pillar(p)
     else
       return total
     end
-	for i = 1, total, 1 do
+    for i = 1, total, 1 do
       robot.down()
     end
-
   else
     for i = 1, height - 1, 1 do
       up()
       if not stuck then 
-	    if p % (space + 1) == 0 then
-		  placeDown(1)
-	    else
-		  if (total + 1) % ( beamHeight +  1) == 0 then
-			  placeDown(1)
-		  else
-			  placeDown(2)
-		  end
-	    end
-	  else
+        if p % (space + 1) == 0 then
+          placeDown(1)
+        else
+          if (total + 1) % ( beamHeight +  1) == 0 then
+            placeDown(1)
+          else
+            placeDown(2)
+          end
+        end
+      else
         break
       end
     end
@@ -119,13 +119,13 @@ function pillar(p)
     if not stuck then
       if p % (space + 1) == 0 then
         place(1)
-	  else
+      else
         if (total + 1) % ( beamHeight +  1) == 0 then
           place(1)
-		else
+         else
           place(2)
-		end
-	  end	
+        end
+      end	
     else
       return total
     end
@@ -138,6 +138,9 @@ function pillar(p)
   return total
 end
 
+
+
+
 function findBlock(slot)
   stack = 0
   local found = false
@@ -146,9 +149,9 @@ function findBlock(slot)
     if robot.count(i) > 0 and robot.compareTo(slot) then
       found = true
       stack = robot.count(i)
-	  if stack > 1 then
-		break
-	  end
+      if stack > 1 then
+	break
+	end
     end
   end
   return found
