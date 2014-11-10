@@ -85,7 +85,7 @@ function pillar(p)
       if p % (space + 1) == 0 then
         place(1)
       else
-        if (total) % ( beamHeight +  1) == 0 then
+        if (total) % ( beamHeight +  1) == beamHeight then
           place(1)
         else
           place(2)
@@ -105,7 +105,7 @@ function pillar(p)
         if p % (space + 1) == 0 then
           placeDown(1)
         else
-          if (total) % ( beamHeight +  1) == 0 then
+          if (total) % ( beamHeight +  1) == beamHeight then
             placeDown(1)
           else
             placeDown(2)
@@ -121,7 +121,7 @@ function pillar(p)
       if p % (space + 1) == 0 then
         place(1)
       else
-        if (total) % ( beamHeight +  1) == 0 then
+        if (total) % ( beamHeight +  1) == beamHeight then
           place(1)
          else
           place(2)
@@ -147,7 +147,7 @@ end
 function findBlock(slot)
   stack = 0
   local found = false
-  for i = 2, 16, 1 do
+  for i = 2, 48, 1 do
     robot.select(i)
     if robot.count(i) > 0 and robot.compareTo(slot) then
       found = true
