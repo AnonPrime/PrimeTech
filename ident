@@ -1,0 +1,12 @@
+local robot = require ("robot")
+local component = require ("component")
+
+local name = robot.name()
+local level = component.experience.level()
+
+function round2(num, idp)
+  return tonumber(string.format("%." .. (idp or 0) .. "f", num))
+end
+
+print("Name:, ", name)
+print("Level:, ", round2(level, 2))
