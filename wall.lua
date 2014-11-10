@@ -147,7 +147,7 @@ end
 function findBlock(slot)
   stack = 0
   local found = false
-  for i = 2, 48, 1 do
+  for i = 3, 48, 1 do
     robot.select(i)
     if robot.count(i) > 0 and robot.compareTo(slot) then
       found = true
@@ -229,7 +229,7 @@ function forward()
   end
 end
 
-for i = 0, (1 + (pillars * (space + 1))), 1 do
+for i = 1, (1 + (pillars * (space + 1))), 1 do
 	pillar(i)
 	if stuck then 
 		return
