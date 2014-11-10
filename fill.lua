@@ -10,6 +10,8 @@
 -- either a ceiling or wall mode.     --
 ----------------------------------------
 
+local robot = require("robot")
+
 local args = {...}
 
 if args[1] == nil or args[2] == nil or robot.count(1) < 1 or args[1] == "help" then
